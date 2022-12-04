@@ -1,4 +1,8 @@
 global println
+
+section .data
+    newline db 0x0A
+
 section .text
 println:
     push ebp
@@ -11,7 +15,7 @@ println:
 
     mov eax, 4
     mov ebx, 1
-    mov ecx, 0x0a
+    mov ecx, newline
     mov edx, 1
     int 0x80
 
